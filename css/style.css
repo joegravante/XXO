@@ -1,0 +1,49 @@
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.table-top {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+}
+.table-row {
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: inherit;
+}
+
+.square {
+    display: inline-flex;
+    justify-content: center;
+    border: solid 4px whitesmoke;
+    border-collapse: collapse;
+    width: inherit;
+    height: 33%;
+    font-size: 800%;
+    color: white;
+    align-items: center;
+}
+
+.square:hover {
+    background-color: #FF3300;
+}
+
+.square:active {
+    background-color: #001F3F;
+}

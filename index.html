@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XXO</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel=stylesheet href="css/colors.css">
+</head>
+<body class="bg-blue">
+    <div class="table-top">
+        <div class="table-row">
+            <section class="square" id="1" onclick="myFunction(1)"></section>
+            <section class="square" id="2" onclick="myFunction(2)"></section>
+            <section class="square" id="3" onclick="myFunction(3)"></section>
+        </div>
+        <div class="table-row">
+            <section class="square" id="4" onclick="myFunction(4)"></section>
+            <section class="square" id="5" onclick="myFunction(5)"></section>
+            <section class="square" id="6" onclick="myFunction(6)"></section>
+        </div>
+        <div class="table-row">
+            <section class="square" id="7" onclick="myFunction(7)"></section>
+            <section class="square" id="8" onclick="myFunction(8)"></section>
+            <section class="square" id="9" onclick="myFunction(9)"></section>
+        </div>
+    </div>
+<script>
+    function myFunction(e) {
+        document.getElementById(e).innerHTML = "X";
+    }
+</script>
+</body>
+</html>
