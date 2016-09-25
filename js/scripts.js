@@ -108,7 +108,6 @@ function doWeHavaWinner(spaces, num_turns) {
                 console.log(check," ", x);
                 checkitem = String(check).charAt(x);
                 if (spaces.indexOf(Number(checkitem)) == -1) {
-                    console.log(check, "is not found");
                     break;
                 }
                 if (x == 2) {
