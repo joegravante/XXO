@@ -10,22 +10,22 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel=stylesheet href="css/colors.css">
 </head>
-<body class="bg-blue">
+<body class="bg-blue" onload="resetBoard()">
     <div class="table-top" id="gameboard">
         <div class="table-row">
-            <section class="square" id="1" onclick="makeaMoveSucka(1, 1)"></section>
-            <section class="square" id="2" onclick="makeaMoveSucka(1, 2)"></section>
-            <section class="square" id="3" onclick="makeaMoveSucka(1, 3)"></section>
+            <section class="square" id="1" onclick="makeaMoveHuman(1)"></section>
+            <section class="square" id="2" onclick="makeaMoveHuman(2)"></section>
+            <section class="square" id="3" onclick="makeaMoveHuman(3)"></section>
         </div>
         <div class="table-row">
-            <section class="square" id="4" onclick="makeaMoveSucka(1, 4)"></section>
-            <section class="square" id="5" onclick="makeaMoveSucka(1, 5)"></section>
-            <section class="square" id="6" onclick="makeaMoveSucka(1, 6)"></section>
+            <section class="square" id="4" onclick="makeaMoveHuman(4)"></section>
+            <section class="square" id="5" onclick="makeaMoveHuman(5)"></section>
+            <section class="square" id="6" onclick="makeaMoveHuman(6)"></section>
         </div>
         <div class="table-row">
-            <section class="square" id="7" onclick="makeaMoveSucka(1, 7)"></section>
-            <section class="square" id="8" onclick="makeaMoveSucka(1, 8)"></section>
-            <section class="square" id="9" onclick="makeaMoveSucka(1, 9)"></section>
+            <section class="square" id="7" onclick="makeaMoveHuman(7)"></section>
+            <section class="square" id="8" onclick="makeaMoveHuman(8)"></section>
+            <section class="square" id="9" onclick="makeaMoveHuman(9)"></section>
         </div>
     </div>
     <div class="cover-all" id="gameOver"></div>
