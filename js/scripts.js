@@ -47,9 +47,10 @@ function playIt(playerid, space) {
     }
     document.getElementById(space).innerHTML = token;
     document.getElementById(space).onclick="#";
-    updateBoard2(token, space);
-    //updateBoard(playerid, space);
-    scoreDaThang(playerid, space);
+    updateBoard(token, space);
+    doWeHavaWinner();
+    //updateBoard(playerid, space); // old function
+    //scoreDaThang(playerid, space); // old function
 }
 
 /* Updates the list of spaces the player and computer have
@@ -57,9 +58,13 @@ selected into an array, and updates what spaces are left
 available on the gameboard
  ================================= */
 
-function updateBoard2(token, space) {
-    //console.log(x,y);
-    gameBoard[getBoardLocation(space)] = token;
+function updateBoard(token, space) {
+    var coords = getBoardLocation(space);
+    var x = coords[0];
+    console.log[x];
+    var y = coords[1];
+    console.log[y];
+    //gameBoard.push[x][y] = token;
     document.getElementById(space).innerHTML = token;
     var index = spaces_open.indexOf(space);
     spaces_open.splice(index, 1);
@@ -76,6 +81,9 @@ function getBoardLocation(space) {
     }
 }
 
+/*
+
+-- sunset this version
 function updateBoard(playerid, space) {
     // update the players chosen spaces into the array
     if (playerid == 'human_player') {
@@ -88,11 +96,15 @@ function updateBoard(playerid, space) {
     // update the spaces left available on the board
     var index = spaces_open.indexOf(space);
     spaces_open.splice(index, 1);
-}
+}*/
 
 /* Once a move is made, checks to see if there is
 a tie, human win, or human loss
  ================================= */
+
+
+/*
+-- sunset this for scoreDaThing2
 
 function scoreDaThang(playerid, space) {
     if (spaces_open.length == 0) {
@@ -109,10 +121,44 @@ function scoreDaThang(playerid, space) {
             lose();
         }
     }
-}
+}*/
 
 /* Call this when the human wins!
 ================================= */
+
+
+
+/* Checks to see if spaces that the player (human or computa)
+has selected are winning combos (defined in winna_winna array)
+ ================================= */
+
+function doWeHavaWinner(num_turns) {
+      if (scoreColumns() != false) {
+          // do this
+    } return false;
+}
+
+function scoreColumns() {
+    var y;
+    for (var x = 0; x < gameBoard.length; x++) {
+        y = 0;
+        while (true) {
+            if (y+1 > gameBoard.length) {
+                console.log("winner in column ", x);
+                //return (gameBoard[column][cell]);
+            }
+            if (gameBoard[x][y] != gameBoard[x][y+1]) {
+                console.log(gameBoard[x][y], " ", gameBoard[x][y+1]);
+                console.log("no winner in column", x);
+                break;
+            }
+            y++;
+
+        }
+    }
+    console.log("No winner in any columns");
+    return false;
+}
 
 function win() {
     document.getElementById("gameOver").innerHTML = "yeah, you WON!";
@@ -136,30 +182,6 @@ function tie() {
     document.getElementById("gameOver").innerHTML = "TIE...breaker!";
     document.getElementById("gameboard").style.display = "none";
     document.getElementById("gameOver").style.display = "flex";
-}
-
-/* Checks to see if spaces that the player (human or computa)
-has selected are winning combos (defined in winna_winna array)
- ================================= */
-
-function doWeHavaWinner(spaces, num_turns) {
-    if (num_turns > 2) {
-        var check;
-        var checkitem;
-        for (var i = 0; i < winna_winna.length; i++) {
-            check = winna_winna[i];
-            for (var x = 0; x < 3; x++) {
-                checkitem = String(check).charAt(x);
-                if (spaces.indexOf(Number(checkitem)) == -1) {
-                    break;
-                }
-                if (x == 2) {
-                    return true;
-                }
-            }
-        }
-    }
-    return false;
 }
 
 /* Call to have the computa make a move
